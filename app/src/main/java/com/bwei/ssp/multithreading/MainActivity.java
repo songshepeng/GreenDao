@@ -28,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
         pause= (Button) findViewById(R.id.delete);
         mProgressBar= (ProgressBar) findViewById(R.id.progressBar);
         String urlString = "http://2449.vod.myqcloud.com/2449_22ca37a6ea9011e5acaaf51d105342e3.f20.mp4";
+       //输入下载的地址
         String localPath = Environment.getExternalStorageDirectory()
                 .getAbsolutePath() + "/local";
+        //穿件下载的路径
         mDownloadUtil = new DownloadUtil(2, localPath, "adc.mp4", urlString,
                 this);
         mDownloadUtil.setOnDownloadListener(new DownloadUtil.OnDownloadListener(){
@@ -59,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 mDownloadUtil.start();
             }
         });
-
         pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
